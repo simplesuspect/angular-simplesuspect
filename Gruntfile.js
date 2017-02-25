@@ -484,7 +484,7 @@ module.exports = function (grunt) {
 		'postcss',
 		'ngtemplates',
 		'concat',
-		'removelogging',
+		// 'removelogging',
 		'ngAnnotate',
 		'copy:dist',
 		'cdnify',
