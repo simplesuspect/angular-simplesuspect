@@ -12,8 +12,21 @@
 </div>
 <div class="ss-alert-content">
 	TAKE THIS GUY TO JAIL!
-  {{config}}
-  <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button>
-  <canvas id="snapshot" class="well pull-right"></canvas>
-  <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button>
+  {{alert}}
+  <!-- <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button> -->
+  <canvas id="snapshot"></canvas>
+  <!-- <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button> -->
+
+    <div class="select">
+      <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+    </div>
+
+    <div class="select">
+      <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+    </div>
+
+    <div class="select">
+      <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+
 </div>
