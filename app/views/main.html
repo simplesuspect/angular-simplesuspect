@@ -4,18 +4,12 @@
        on-error="onError(err)"
        on-streaming="onSuccess()"
        channel="channel"
+       cameraid="1"
        placeholder="'images/yeoman.png'">
        <div class="alert alert-error" ng-show="webcamError">
            <span>Webcam could not be started. Did you give access to it?</span>
        </div>
    </webcam>
-</div>
-<div class="select">
-  <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-</div>
-
-<div class="select">
-  <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
 </div>
 
 <div class="select">
