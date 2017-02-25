@@ -1,6 +1,19 @@
 <div class="fullscreen-bg">
-  <webcam></webcam>
+  <webcam class="well-small pull-right"
+       on-stream="onStream(stream)"
+       on-error="onError(err)"
+       on-streaming="onSuccess()"
+       channel="channel"
+       placeholder="'images/yeoman.png'">
+       <div class="alert alert-error" ng-show="webcamError">
+           <span>Webcam could not be started. Did you give access to it?</span>
+       </div>
+   </webcam>
 </div>
 <div class="ss-alert-content">
 	TAKE THIS GUY TO JAIL!
+  {{config}}
+  <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button>
+  <canvas id="snapshot" class="well pull-right"></canvas>
+  <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button>
 </div>
