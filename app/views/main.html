@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<div class="ss-overlay-bottom-left" ng-if="person.dangerZone != 'caution'">
+<div class="ss-overlay-bottom-left" ng-if="person.dangerZone != 'caution' && person.lyiingLevel === 'clear'">
   <div class="ss-overlay">
     <div  class="ss-table">
       <div class="ss-row">
@@ -96,6 +96,24 @@
         <div class="ss-cell">
           <div class="overlay-text">
             DANGER ZONE!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ss-overlay-bottom-left" ng-if="person.dangerZone != 'caution' && person.lyiingLevel === 'suspicious'">
+  <div class="ss-overlay ss-overlay-red">
+    <div  class="ss-table">
+      <div class="ss-row">
+        <div class="ss-cell">
+          <!-- <div class="ss-icon-missing ss-icon">
+          </div> -->
+        </div>
+        <div class="ss-cell">
+          <div class="overlay-text">
+            MAYBE LYING!
           </div>
         </div>
       </div>
