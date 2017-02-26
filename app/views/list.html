@@ -1,16 +1,6 @@
-<p>These are normal AR links.</p>
-<a ng-repeat="device in mediaDeviceList" ng-href="#!/main/{{device.deviceId}}">
-   {{$index}} {{device.kind}} {{device.label}}
-   <br />
-   {{device.deviceId}}
-  <br />
-  <br />
-</a>
-<p>These are stereo AR links.</p>
-<a ng-repeat="device in mediaDeviceList" ng-href="#!/stereo/{{device.deviceId}}">
-   {{$index}} {{device.kind}} {{device.label}}
-   <br />
-   {{device.deviceId}}
-  <br />
-  <br />
+<p>Select a Camera</p>
+<a ng-repeat="device in mediaDeviceList" ng-if="device.kind === 'videoinput'" ng-href="#!/main/{{device.deviceId}}">
+  <div class="ss-input-list">
+    {{ device.label }}
+  </div>
 </a>

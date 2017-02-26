@@ -135,3 +135,9 @@ border:0.5vw solid rgb(200,200,0);
   text-decoration: none;
   color:#ddd;
 }
+.ss-input-list{
+  margin:2vw;
+  padding:4vw;
+  border:1px solid #999;
+  border-radius: 1vw;
+}
