@@ -14,25 +14,61 @@
 
 <div class="ss-overlay-top-left" ng-if="person.person.userData === 'wanted'">
   <div class="ss-overlay  ss-overlay-red">
-    <div class="overlay-text">
-      WARRANT
+    <div  class="ss-table">
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-icon-warrant ss-icon">
+          </div>
+        </div>
+        <div class="ss-cell">
+          <div class="overlay-text">
+            WARRANT
+          </div>
+          <div class="overlay-text">
+            {{ person.person.name }}&ndash;{{ person.dangerZone }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="ss-overlay-top-left" ng-if="person.person.userData === 'missing'">
   <div class="ss-overlay  ss-overlay-yellow">
-    <div class="overlay-text">
-      MISSING
+    <div  class="ss-table">
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-icon-missing ss-icon">
+          </div>
+        </div>
+        <div class="ss-cell">
+          <div class="overlay-text">
+            MISSING
+          </div>
+          <div class="overlay-text">
+            {{ person.person.name }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 
-<div class="ss-overlay-bottom-left" ng-if="person.person.userData === 'wanted'">
+<div class="ss-overlay-bottom-left" ng-if="person.dangerZone === 'danger zone'">
   <div class="ss-overlay ss-overlay-red">
-    <div class="overlay-text">
-      DANGER
+    <div  class="ss-table">
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-icon-missing ss-icon">
+          </div>
+        </div>
+        <div class="ss-cell">
+          <div class="overlay-text">
+            DANGER ZONE!
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
