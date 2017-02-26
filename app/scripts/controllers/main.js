@@ -116,7 +116,8 @@ angular.module('angularSimplesuspectApp')
 					$scope.makeSnapshot();
 				}, 5000);
 			}, function (resp) {
-				console.log('error response\n', resp);
+				// console.log('error response\n', resp);
+				// console.log(resp.config.data.data);
 				setTimeout(function () {
 					$scope.makeSnapshot();
 				}, 5000);
