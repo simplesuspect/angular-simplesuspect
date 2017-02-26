@@ -126,3 +126,12 @@ border:0.5vw solid rgb(200,200,0);
   font-size:3.2vw;
   color:#ddd;
 }
+.ss-list-button{
+  position:absolute;
+  top:0%;
+  right:0%;
+  padding:2%;
+  font-size:8vw;
+  text-decoration: none;
+  color:#ddd;
+}
