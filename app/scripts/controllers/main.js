@@ -8,10 +8,9 @@
  * Controller of the angularSimplesuspectApp
  */
 angular.module('angularSimplesuspectApp')
-	.controller('MainCtrl', function ($scope, $interval, $routeParams) {
+	.controller('MainCtrl', function ($scope, $interval, $routeParams, upload, $http) {
 
 		$scope.cameraId = $routeParams.cameraId;
-
 
 
 		var _video = null;
@@ -96,6 +95,43 @@ angular.module('angularSimplesuspectApp')
 			return ctx.getImageData(x, y, w, h);
 		};
 
+
+
+		var sendToServer = function (imgBase64) {
+			var req = {
+				method: 'POST',
+				url: 'https://simplesuspect.herokuapp.com/s',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: {
+					data: imgBase64
+				}
+			}
+
+			$http(req).then(function (resp) {
+				$scope.person = resp.data;
+				console.log(resp.data);
+				setTimeout(function () {
+					$scope.makeSnapshot();
+				}, 5000);
+			}, function (resp) {
+				console.log('error response\n', resp);
+				setTimeout(function () {
+					$scope.makeSnapshot();
+				}, 5000);
+			});
+
+
+			// 	var uploadUrl = 'https://simplesuspect.herokuapp.com/s';
+			// 	upload.uploadFileToUrl(
+			// 		imgBase64, uploadUrl, {}).then(function (resp) {
+			// 		console.log(resp);
+			// 	}).fail(function (resp) {
+			// 		console.log(resp);
+			// 	})
+		};
+
 		/**
 		 * This function could be used to send the image data
 		 * to a backend server that expects base64 encoded images.
@@ -104,12 +140,16 @@ angular.module('angularSimplesuspectApp')
 		 */
 		var sendSnapshotToServer = function sendSnapshotToServer(imgBase64) {
 			$scope.snapshotData = imgBase64;
+			sendToServer(imgBase64);
 			// console.log('captured image!\n', imgBase64);
 		};
-
-		var setSnapShotInterval = $interval(function () {
+		setTimeout(function () {
 			$scope.makeSnapshot();
 		}, 1000);
+
+		// var setSnapShotInterval = $interval(function () {
+		// 	$scope.makeSnapshot();
+		// }, 5000);
 
 
 		$scope.$on('$destroy', function () {

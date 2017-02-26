@@ -13,8 +13,24 @@
 </div>
 
 <div class="ss-alert-content">
-	TAKE THIS GUY TO JAIL!
-  {{alert}}
+  <div>
+    {{ person.age }}
+  </div>
+  <div>
+    {{ person.gender }}
+  </div>
+  <div>
+    neutral:{{ (person.emotion[0].scores.neutral) * 100 | number:0 }}
+  </div>
+  <div>
+    happiness:{{ (person.emotion[0].scores.happiness) * 100 | number:0 }}
+  </div>
+  <div>
+    anger:{{ (person.emotion[0].scores.anger) * 100 | number:0 }}
+  </div>
+  <div>
+    disgust:{{ (person.emotion[0].scores.disgust) * 100 | number:0 }}
+  </div>
   <!-- <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button> -->
   <canvas id="snapshot" style="display:none"></canvas>
   <!-- <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button> -->
