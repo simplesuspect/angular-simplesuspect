@@ -114,13 +114,14 @@ angular.module('angularSimplesuspectApp')
 				console.log(resp.data);
 				setTimeout(function () {
 					$scope.makeSnapshot();
-				}, 5000);
+				}, 10000);
 			}, function (resp) {
+				$scope.person = '';
 				// console.log('error response\n', resp);
 				// console.log(resp.config.data.data);
 				setTimeout(function () {
 					$scope.makeSnapshot();
-				}, 5000);
+				}, 10000);
 			});
 
 

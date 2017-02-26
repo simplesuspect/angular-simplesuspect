@@ -12,7 +12,36 @@
    </webcam>
 </div>
 
+<div class="ss-overlay-top-left animated bounceIn" ng-if="person.person.userData === 'wanted'">
+  <div class="ss-overlay  ss-overlay-red">
+    <div class="overlay-text">
+      WARRANT
+    </div>
+  </div>
+</div>
+
+<div class="ss-overlay-top-left animated bounceIn" ng-if="person.person.userData === 'missing'">
+  <div class="ss-overlay  ss-overlay-yellow">
+    <div class="overlay-text">
+      MISSING
+    </div>
+  </div>
+</div>
+
+
+<div class="ss-overlay-bottom-left animated bounceIn" ng-if="person.person.userData === 'wanted'">
+  <div class="ss-overlay ss-overlay-red">
+    <div class="overlay-text">
+      DANGER
+    </div>
+  </div>
+</div>
+
+<!--
 <div class="ss-alert-content">
+  <div>
+    {{ person.person.name }}
+  </div>
   <div>
     {{ person.age }}
   </div>
@@ -31,8 +60,7 @@
   <div>
     disgust:{{ (person.emotion[0].scores.disgust) * 100 | number:0 }}
   </div>
-  <!-- <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button> -->
   <canvas id="snapshot" style="display:none"></canvas>
-  <!-- <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button> -->
 
-</div>
+</div> -->
+<canvas id="snapshot" style="display:none"></canvas>

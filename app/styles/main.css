@@ -76,3 +76,29 @@ height:100vh;
 body{
 font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
+.ss-overlay-yellow{
+  background-color:rgba(200,200,0,0.6);
+}
+.ss-overlay-red{
+  background-color:rgba(200,0,0,0.6);
+}
+.ss-overlay{
+  padding:2vw;
+  border-radius: 1vw;
+
+}
+.ss-overlay-bottom-left{
+  position: absolute;
+  bottom:2%;
+  left:2%;
+}
+
+.ss-overlay-top-left{
+  position: absolute;
+  top:2%;
+  left:2%;
+}
+.overlay-text{
+  font-size:4vw;
+  color:#ddd;
+}
