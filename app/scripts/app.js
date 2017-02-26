@@ -27,6 +27,16 @@ angular
 				controller: 'MainCtrl',
 				controllerAs: 'main'
 			})
+			.when('/main/:cameraId', {
+				templateUrl: 'views/main.html',
+				controller: 'MainCtrl',
+				controllerAs: 'main'
+			})
+			.when('/list', {
+				templateUrl: 'views/list.html',
+				controller: 'ListCtrl',
+				controllerAs: 'list'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -8,8 +8,9 @@
  * Controller of the angularSimplesuspectApp
  */
 angular.module('angularSimplesuspectApp')
-	.controller('MainCtrl', function ($scope, $interval) {
+	.controller('MainCtrl', function ($scope, $interval, $routeParams) {
 
+		$scope.cameraId = $routeParams.cameraId;
 
 		var _video = null;
 		var patData = null;
@@ -108,5 +109,7 @@ angular.module('angularSimplesuspectApp')
 			// sendSnapshotToServer()
 			$scope.makeSnapshot();
 		}, 1000);
+
+
 
 	});

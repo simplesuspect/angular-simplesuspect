@@ -1,0 +1,8 @@
+<p>This is the list view.</p>
+<a ng-repeat="device in mediaDeviceList" ng-href="#!/main/{{device.deviceId}}">
+   {{$index}} {{device.kind}} {{device.label}}
+   <br />
+   {{device.deviceId}}
+  <br />
+  <br />
+</a>
