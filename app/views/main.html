@@ -54,6 +54,37 @@
   </div>
 </div>
 
+<div class="ss-overlay-bottom-left" sng-if="person.dangerZone === 'danger zone'">
+  <div class="ss-overlay">
+    <div  class="ss-table">
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-progress-container">
+            <div class="ss-progress ss-sadness" style="width:{{(person.emotion[0].scores.sadness)*100}}%;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-progress-container">
+            <div class="ss-progress ss-anger" style="width:{{(person.emotion[0].scores.anger)*100}}%;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ss-row">
+        <div class="ss-cell">
+          <div class="ss-progress-container">
+            <div class="ss-progress ss-happy" style="width:{{(person.emotion[0].scores.happiness)*100}}%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
 <div class="ss-overlay-bottom-left" ng-if="person.dangerZone === 'danger zone'">
   <div class="ss-overlay ss-overlay-red">
     <div  class="ss-table">
@@ -70,7 +101,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="ss-overlay-bottom-right">
   <div class="ss-status-text" ng-if="status === 'facefound'">

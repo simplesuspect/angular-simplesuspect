@@ -205,3 +205,26 @@ background-color:rgba(200,0,0,0.4);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+
+
+/*progress bars*/
+.ss-progress-container{
+  background:rgba(200,200,200,0.4);
+  width:25vw;
+  padding:0.3vw;
+}
+.ss-progress{
+  height:2vh;
+  font-size:1vw;
+  width:0%;
+  color:#111;
+}
+.ss-sadness{
+  background-color:rgba(0, 0, 200, 0.5);
+}
+.ss-anger{
+  background-color:rgba(200, 0, 0, 0.5);
+}
+.ss-happy{
+  background-color:rgba(0, 200, 0, 0.5);
+}
