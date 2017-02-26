@@ -116,13 +116,13 @@ angular.module('angularSimplesuspectApp')
 				console.log(resp.data);
 				setTimeout(function () {
 					$scope.makeSnapshot();
-				}, 10000);
+				}, 5000);
 			}, function (resp) {
 				$scope.person = '';
 				$scope.status = 'noface';
 				setTimeout(function () {
 					$scope.makeSnapshot();
-				}, 10000);
+				}, 5000);
 			});
 
 

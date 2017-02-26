@@ -212,12 +212,17 @@ background-color:rgba(200,0,0,0.4);
   background:rgba(200,200,200,0.4);
   width:25vw;
   padding:0.3vw;
+  margin:0.3vw;
 }
 .ss-progress{
-  height:2vh;
-  font-size:1vw;
+  height:2.4vh;
+  font-size:0.9vw;
   width:0%;
   color:#111;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 .ss-sadness{
   background-color:rgba(0, 0, 200, 0.5);
