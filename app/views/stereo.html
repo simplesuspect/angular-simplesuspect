@@ -1,0 +1,66 @@
+<style>
+#left-eye{
+  height:100vh;
+  width:50vw;
+  float:left;
+  overflow:hidden;
+}
+#right-eye{
+  height:100vh;
+  width:50vw;
+  float:left;
+  overflow:hidden;
+
+}
+.webcam video{
+  position: relative !important;
+      top: -20vh !important;
+      left: -40vw !important;
+}
+.ss-alert-content-stereo{
+  position: relative;
+  top: -142vh;
+}
+</style>
+<div id="left-eye">
+  <webcam
+       on-stream="onStream(stream)"
+       on-error="onError(err)"
+       on-streaming="onSuccess()"
+       channel="{'videoWidth':960,'videoHeight':690,'width':960,'height':960}"
+       cameraid="cameraId"
+       placeholder="'images/yeoman.png'">
+       <div class="alert alert-error" ng-show="webcamError">
+           <span>Webcam could not be started. Did you give access to it?</span>
+       </div>
+   </webcam>
+   <div class="ss-alert-content-stereo">
+   	TAKE THIS GUY TO JAIL!
+     {{alert}}
+     <!-- <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button> -->
+     <!-- <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button> -->
+
+   </div>
+</div>
+
+<div id="right-eye">
+  <webcam
+       on-stream="onStream(stream)"
+       on-error="onError(err)"
+       on-streaming="onSuccess()"
+       channel="{'videoWidth':960,'videoHeight':690,'width':960,'height':960}"
+       cameraid="cameraId"
+       placeholder="'images/yeoman.png'">
+       <div class="alert alert-error" ng-show="webcamError">
+           <span>Webcam could not be started. Did you give access to it?</span>
+       </div>
+   </webcam>
+   <div class="ss-alert-content-stereo">
+   	TAKE THIS GUY TO JAIL!
+     {{alert}}
+     <!-- <button class="btn btn-large btn-primary" ng-click="makeSnapshot()">Take snapshot!</button> -->
+     <canvas id="snapshot" style="display:none"></canvas>
+     <!-- <button ng-click="downloadSnapshot(snapshotData)" ng-disabled="!snapshotData" class="btn btn-large btn-primary">Download ^^</button> -->
+
+   </div>
+<div>

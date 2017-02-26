@@ -37,6 +37,11 @@ angular
 				controller: 'ListCtrl',
 				controllerAs: 'list'
 			})
+			.when('/stereo', {
+				templateUrl: 'views/stereo.html',
+				controller: 'MainCtrl',
+				controllerAs: 'stereo'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

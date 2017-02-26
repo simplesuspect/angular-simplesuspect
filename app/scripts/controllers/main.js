@@ -104,7 +104,7 @@ angular.module('angularSimplesuspectApp')
 		 */
 		var sendSnapshotToServer = function sendSnapshotToServer(imgBase64) {
 			$scope.snapshotData = imgBase64;
-			console.log('captured image!');
+			// console.log('captured image!\n', imgBase64);
 		};
 
 		var setSnapShotInterval = $interval(function () {
