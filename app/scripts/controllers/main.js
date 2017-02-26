@@ -12,6 +12,8 @@ angular.module('angularSimplesuspectApp')
 
 		$scope.cameraId = $routeParams.cameraId;
 
+
+
 		var _video = null;
 		var patData = null;
 
@@ -87,8 +89,8 @@ angular.module('angularSimplesuspectApp')
 
 		var getVideoData = function getVideoData(x, y, w, h) {
 			var hiddenCanvas = document.createElement('canvas');
-			hiddenCanvas.width = 1280 || _video.width;
-			hiddenCanvas.height = 720 || _video.height;
+			hiddenCanvas.width = _video.width;
+			hiddenCanvas.height = _video.height;
 			var ctx = hiddenCanvas.getContext('2d');
 			ctx.drawImage(_video, 0, 0, _video.width, _video.height);
 			return ctx.getImageData(x, y, w, h);
@@ -105,11 +107,14 @@ angular.module('angularSimplesuspectApp')
 			console.log('captured image!');
 		};
 
-		$interval(function () {
-			// sendSnapshotToServer()
+		var setSnapShotInterval = $interval(function () {
 			$scope.makeSnapshot();
 		}, 1000);
 
 
+		$scope.$on('$destroy', function () {
+			// Make sure that the interval is destroyed too
+			$interval.cancel(setSnapShotInterval);
+		});
 
 	});
