@@ -24,8 +24,8 @@
           <div class="overlay-text">
             WARRANT
           </div>
-          <div class="overlay-text">
-            {{ person.person.name }}&ndash;{{ person.dangerZone }}
+          <div class="overlay-text warrant-name">
+            {{ person.person.name }}
           </div>
         </div>
       </div>
@@ -73,24 +73,17 @@
 </div>
 
 <div class="ss-overlay-bottom-right">
-  <div class="ss-status-text">
-    {{ status }}
-  </div>
-  <!-- <div class="ss-overlay ss-overlay-red">
-    <div  class="ss-table">
-      <div class="ss-row">
-        <div class="ss-cell">
-          <div class="ss-icon-missing ss-icon">
-          </div>
-        </div>
-        <div class="ss-cell">
-          <div class="overlay-text">
-            DANGER ZONE!
-          </div>
-        </div>
-      </div>
+  <div class="ss-status-text" ng-if="status === 'facefound'">
+    <div class="ss-status-dot ss-dot-face">
     </div>
-  </div> -->
+  </div>
+  <div class="ss-status-text" ng-if="status === 'checking'">
+    <div class="spinner"></div>
+  </div>
+  <div class="ss-status-text" ng-if="status === 'noface'">
+    <div class="ss-status-dot ss-dot-noface">
+    </div>
+  </div>
 </div>
 
 <a class="ss-list-button" ng-href="#!/list">
@@ -98,31 +91,4 @@
     &vellip;
   </div>
 </a>
-
-<!--
-<div class="ss-alert-content">
-  <div>
-    {{ person.person.name }}
-  </div>
-  <div>
-    {{ person.age }}
-  </div>
-  <div>
-    {{ person.gender }}
-  </div>
-  <div>
-    neutral:{{ (person.emotion[0].scores.neutral) * 100 | number:0 }}
-  </div>
-  <div>
-    happiness:{{ (person.emotion[0].scores.happiness) * 100 | number:0 }}
-  </div>
-  <div>
-    anger:{{ (person.emotion[0].scores.anger) * 100 | number:0 }}
-  </div>
-  <div>
-    disgust:{{ (person.emotion[0].scores.disgust) * 100 | number:0 }}
-  </div>
-  <canvas id="snapshot" style="display:none"></canvas>
-
-</div> -->
 <canvas id="snapshot" style="display:none"></canvas>

@@ -87,16 +87,17 @@ font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   vertical-align: middle;
 }
 .ss-overlay-yellow{
-  background-color:rgba(200,200,0,0.6);
+  background-color:rgba(200,200,0,0.4);
 border:0.5vw solid rgb(200,200,0);
 }
 .ss-overlay-red{
-  background-color:rgba(200,0,0,0.6);
+  background-color:rgba(200,0,0,0.4);
     border:0.2vw solid rgb(200,0,0);
 }
 .ss-icon-warrant{
   background-image:url('../images/warrant.png');
 }
+
 .ss-icon-missing{
   background-image:url('../images/missing.png');
 }
@@ -106,10 +107,11 @@ border:0.5vw solid rgb(200,200,0);
   background-size:contain;
   background-repeat: no-repeat;
   display:inline-block;
+  margin-top:-5vh;
 }
 .ss-overlay{
-  padding:2vw;
-  border-radius: 1vw;
+  padding:1vw;
+  border-radius: 0.5vw;
 }
 .ss-overlay-bottom-left{
   position: absolute;
@@ -118,7 +120,7 @@ border:0.5vw solid rgb(200,200,0);
 }
 .ss-overlay-top-left{
   position: absolute;
-  top:2%;
+  top:5%;
   left:2%;
 }
 .ss-overlay-bottom-right{
@@ -130,6 +132,9 @@ border:0.5vw solid rgb(200,200,0);
   text-transform: uppercase;
   font-size:2.4vw;
   color:#ddd;
+}
+.warrant-name{
+  font-size:1.6vw;
 }
 .ss-list-button{
   position:absolute;
@@ -150,4 +155,53 @@ border:0.5vw solid rgb(200,200,0);
   font-size:3vw;
   color:#ddd;
   text-shadow: 0px 0px 20px #111;
+}
+.ss-status-dot{
+  padding:2vw;
+  border-radius: 50%;
+  background:#ddd;
+}
+.ss-dot-face{
+background-color:rgba(0,200,0,0.4);
+}
+.ss-dot-noface{
+background-color:rgba(200,0,0,0.4);
+}
+.ss-warrant-image{
+  height:10vw;
+  width:20vw;
+  background-size:contain;
+  background-repeat: no-repeat;
+  display:inline-block;
+  background-image:url('../images/wanted.png');
+}
+
+/*loading animation*/
+.spinner {
+  width: 4vw;
+  height: 4vw;
+  background-color: #ddd;
+
+  /*margin: 100px auto;*/
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

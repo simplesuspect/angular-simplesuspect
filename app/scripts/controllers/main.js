@@ -98,7 +98,7 @@ angular.module('angularSimplesuspectApp')
 
 
 		var sendToServer = function (imgBase64) {
-			$scope.status = 'Checking Face';
+			$scope.status = 'checking';
 			var req = {
 				method: 'POST',
 				url: 'https://simplesuspect.herokuapp.com/s',
@@ -111,7 +111,7 @@ angular.module('angularSimplesuspectApp')
 			}
 
 			$http(req).then(function (resp) {
-				$scope.status = 'Face Found';
+				$scope.status = 'facefound';
 				$scope.person = resp.data;
 				console.log(resp.data);
 				setTimeout(function () {
@@ -119,7 +119,7 @@ angular.module('angularSimplesuspectApp')
 				}, 10000);
 			}, function (resp) {
 				$scope.person = '';
-				$scope.status = 'No Face';
+				$scope.status = 'noface';
 				setTimeout(function () {
 					$scope.makeSnapshot();
 				}, 10000);
@@ -148,7 +148,7 @@ angular.module('angularSimplesuspectApp')
 		};
 		setTimeout(function () {
 			$scope.makeSnapshot();
-		}, 1000);
+		}, 2000);
 
 		// var setSnapShotInterval = $interval(function () {
 		// 	$scope.makeSnapshot();
